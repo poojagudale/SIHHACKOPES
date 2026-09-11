@@ -7,6 +7,7 @@ import DemoCredentialsBox from './DemoCredentialsBox';
 import { Zap, Shield, Map, Activity } from 'lucide-react';
 import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
+import ThemeToggle from '@/components/ThemeToggle';
 
 
 type AuthMode = 'login' | 'register';
@@ -101,6 +102,9 @@ export default function AuthScreen() {
 
       {/* Right form panel */}
       <div className="flex-1 flex flex-col justify-center items-center px-6 py-12 overflow-y-auto scrollbar-thin">
+        <div className="absolute top-4 right-4">
+          <ThemeToggle />
+        </div>
         {/* Mobile logo */}
         <div className="lg:hidden flex items-center gap-2 mb-8">
           <AppLogo size={36} />

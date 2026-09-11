@@ -1,6 +1,6 @@
 'use client';
 
-import React, { memo, useMemo } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import AppIcon from './AppIcon';
 import AppImage from './AppImage';
 
@@ -19,6 +19,7 @@ const AppLogo = memo(function AppLogo({
   className = '',
   onClick,
 }: AppLogoProps) {
+  const [imageError, setImageError] = useState(false);
   // Memoize className calculation
   const containerClassName = useMemo(() => {
     const classes = ['flex items-center'];
@@ -30,7 +31,7 @@ const AppLogo = memo(function AppLogo({
   return (
     <div className={containerClassName} onClick={onClick}>
       {/* Show image if src provided, otherwise show icon */}
-      {src ? (
+      {src && !imageError ? (
         <AppImage
           src={src}
           alt="Logo" 
@@ -39,6 +40,7 @@ const AppLogo = memo(function AppLogo({
           className="flex-shrink-0"
           priority={true}
           unoptimized={src.endsWith('.svg')}
+          onError={() => setImageError(true)}
         />
       ) : (
         <AppIcon name={iconName} size={size} className="flex-shrink-0" />

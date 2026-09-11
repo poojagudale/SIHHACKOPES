@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Bell, Search, Menu } from 'lucide-react';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface AdminTopbarProps {
   onMenuToggle?: () => void;
@@ -44,6 +45,8 @@ export default function AdminTopbar({ onMenuToggle }: AdminTopbarProps) {
         <Bell className="w-5 h-5" />
         <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent" />
       </button>
+
+      <ThemeToggle />
 
       {/* Time */}
       <div className="hidden lg:flex flex-col items-end">

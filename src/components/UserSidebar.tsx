@@ -8,6 +8,7 @@ import {
   LayoutDashboard, Camera, Activity, History, FileText, User, Settings, LogOut, Eye,
 } from 'lucide-react';
 import Icon from '@/components/ui/AppIcon';
+import ThemeToggle from '@/components/ThemeToggle';
 
 
 const USER_NAV = [
@@ -71,6 +72,10 @@ export default function UserSidebar() {
           <LogOut className="w-4 h-4" />
           <span>Sign Out</span>
         </Link>
+        <div className="flex items-center justify-between px-3">
+          <span className="text-xs text-muted-foreground">Theme</span>
+          <ThemeToggle />
+        </div>
       </div>
     </aside>
   );

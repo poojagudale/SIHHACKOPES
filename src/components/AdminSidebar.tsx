@@ -10,6 +10,7 @@ import {
   Footprints, ClipboardList,
 } from 'lucide-react';
 import Icon from '@/components/ui/AppIcon';
+import ThemeToggle from '@/components/ThemeToggle';
 
 
 interface NavItem {
@@ -132,6 +133,10 @@ export default function AdminSidebar({ collapsed, onToggle }: AdminSidebarProps)
           <LogOut className="w-4 h-4 flex-shrink-0" />
           {!collapsed && <span>Sign Out</span>}
         </Link>
+        <div className={`flex items-center ${collapsed ? 'justify-center' : 'justify-between'} px-3`}>
+          {!collapsed && <span className="text-xs text-muted-foreground">Theme</span>}
+          <ThemeToggle />
+        </div>
         <button
           onClick={onToggle}
           className="flex items-center gap-2 px-3 py-2 rounded-lg nav-inactive text-sm w-full"

@@ -44,6 +44,29 @@
   --chart-5: #EAB308;
 }
 
+html.light {
+  --background: #F4F7FB;
+  --foreground: #172033;
+  --primary: #007A99;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E9EEF5;
+  --secondary-foreground: #526078;
+  --accent: #D94B1F;
+  --accent-foreground: #FFFFFF;
+  --muted: #E7EDF5;
+  --muted-foreground: #64748B;
+  --card: #FFFFFF;
+  --card-foreground: #172033;
+  --border: #D6DFEA;
+  --input: #F8FAFC;
+  --ring: #007A99;
+
+  --severity-low-bg: #DCFCE7;
+  --severity-medium-bg: #FEF3C7;
+  --severity-high-bg: #FFEDD5;
+  --severity-critical-bg: #FEE2E2;
+}
+
 @layer base {
   * {
     box-sizing: border-box;

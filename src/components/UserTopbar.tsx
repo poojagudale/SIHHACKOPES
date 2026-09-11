@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import AppLogo from '@/components/ui/AppLogo';
 import { Bell, Menu, Shield } from 'lucide-react';
+import ThemeToggle from '@/components/ThemeToggle';
 
 interface UserTopbarProps {
   onMenuToggle?: () => void;
@@ -23,6 +24,7 @@ export default function UserTopbar({ onMenuToggle }: UserTopbarProps) {
         <Bell className="w-5 h-5" />
         <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent" />
       </button>
+      <ThemeToggle />
       <Link href="/admin-dashboard" className="p-2 rounded-lg nav-inactive" aria-label="Admin Panel">
         <Shield className="w-5 h-5" />
       </Link>
